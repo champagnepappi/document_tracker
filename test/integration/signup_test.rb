@@ -29,6 +29,7 @@ class SignupTest < ActionDispatch::IntegrationTest
       }
     }
     assert_redirected_to User.last
+    assert is_logged_in?
   end
     
 end

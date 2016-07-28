@@ -1,0 +1,17 @@
+<% provide(:title, "Login")%>
+<div class="medium-6 columns medium-offset-3">
+    <h1>Log in Here<h2>
+            <div class="callout">
+
+                <%= form_for(:session, url: login_path) do |f| %>
+                    <%= f.label :username %>
+                    <%= f.text_field :name %>
+
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+
+                    <%= f.submit "login" %>
+                <% end %>
+                <p>Don't have an account? <%= link_to "Sign up", new_user_path %></p>
+            </div>
+</div>
