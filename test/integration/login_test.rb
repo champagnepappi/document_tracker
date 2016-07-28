@@ -27,6 +27,7 @@ class LoginTest < ActionDispatch::IntegrationTest
         password: 'password'
       }
     }
+    assert is_logged_in?
     assert_redirected_to @user
     follow_redirect!
     assert_template 'users/show'
@@ -36,6 +37,8 @@ class LoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     assert_not is_logged_in?
     assert_redirected_to root_url
+    #user logging out in another window
+    delete logout_path
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", logout_path, count: 0
