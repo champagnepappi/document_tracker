@@ -16,5 +16,19 @@ class SignupTest < ActionDispatch::IntegrationTest
       assert_template 'new'
 
     end 
+
+  test "signup with valid params" do
+    get new_user_path
+    assert_template "new"
+    post users_path params: {
+      user: {
+        name: "vicky",
+        email: "vicky@gmail.com",
+        password: "einstein",
+        passwword_confirmation: "einstein"
+      }
+    }
+    assert_redirected_to User.last
+  end
     
 end
