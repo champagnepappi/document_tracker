@@ -14,4 +14,8 @@ class UserTest < ActiveSupport::TestCase
     @user.email = " "
     assert_not @user.valid?
   end
+
+  test "authenticated? should return nil for user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
 end
