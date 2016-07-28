@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(permit_params)
     if @user.save
       redirect_to @user
+      flash[:success] = "Welcome to Document Tracker"
     else
       render 'new'
     end
