@@ -12,9 +12,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(permit_params)
     if @user.save
-      log_in(@user)
-      redirect_to @user
-      flash[:success] = "Welcome to Document Tracker"
+      UserMailer.account_activation(@user).deliver_now
+      # log_in(@user)
+      redirect_to root_url
+      flash[:success] = "An email was sent with activation instructions"
     else
       render 'new'
     end
