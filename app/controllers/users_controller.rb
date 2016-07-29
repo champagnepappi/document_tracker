@@ -14,8 +14,8 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       # log_in(@user)
-      redirect_to root_url
       flash[:success] = "An email was sent with activation instructions"
+      redirect_to root_url
     else
       render 'new'
     end
