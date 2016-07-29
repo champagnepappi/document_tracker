@@ -4,8 +4,13 @@ santos:
   name: Kevin Santos
   email: santos@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 shaz:
   name: Shaz martins
   email: shaz@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
