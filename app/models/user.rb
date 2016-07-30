@@ -38,6 +38,10 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
   def activate
     update_attribute(:activated, true)
     update_attribute(:activated_at, Time.zone.now)
