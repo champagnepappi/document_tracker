@@ -1,19 +1,27 @@
 <% provide(:title, @user.name )%>
-<p>Name:   <%= @user.name %></p><br>
-<p>Email:  <%= @user.email %></p>
+<div class=medium-12>
+    <div class="medium-4 columns">
+        <p>Name:   <%= @user.name %></p><br>
+        <p>Email:  <%= @user.email %></p><br>
 
-<p> <%= link_to "Add new document",new_document_path %></p>
-<table>
-    <h3>My documents</h3>
-    <p> <%= pluralize(@documents.count, "document") %></p>
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        </tr>
-        <% @documents.each do |doc| %>
+        <p> <%= link_to "Add new document",new_document_path %></p>
+    </div>
+    <div class="medium-8 columns">
+        <table>
+            <h4>My documents</h4>
+            <p> <%= pluralize(@documents.count, "document") %></p>
             <tr>
-                <td> <%= link_to doc.title, doc %></td>
-                <td> <%= doc.author %></td>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+            <% @documents.each do |doc| %>
+                <tr>
+                    <td> <%= link_to doc.title, doc %></td>
+                    <td> <%= doc.author %></td>
+                    <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Sure you wanna delete this document"} %></td>
+                    <td> <%= link_to "Edit document",edit_document_path(doc)  %>
                 </tr>
             <% end %>
-    </table>
+        </table>
+    </div>
+</div>
