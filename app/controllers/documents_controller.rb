@@ -1,4 +1,9 @@
 class DocumentsController < ApplicationController
+
+  def index
+    @documents = Document.all
+  end
+
   def new
     @document = current_user.documents.build
   end
@@ -17,6 +22,10 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+  end
+
+  def edit
+    @document = Document.find_by(id: params[:id])
   end
 
   def destroy
