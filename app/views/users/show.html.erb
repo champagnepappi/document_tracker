@@ -1,3 +1,19 @@
 <% provide(:title, @user.name )%>
 <p>Name:   <%= @user.name %></p><br>
 <p>Email:  <%= @user.email %></p>
+
+<p> <%= link_to "Add new document",new_document_path %></p>
+<table>
+    <h3>My documents</h3>
+    <p> <%= pluralize(@documents.count, "document") %></p>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        </tr>
+        <% @documents.each do |doc| %>
+            <tr>
+                <td> <%= link_to doc.title, doc %></td>
+                <td> <%= doc.author %></td>
+                </tr>
+            <% end %>
+    </table>
