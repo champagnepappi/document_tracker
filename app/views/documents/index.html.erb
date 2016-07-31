@@ -1,0 +1,15 @@
+<% provide(:title, "Documents")%>
+<table>
+<h1> All Documents</h1>( <%= @documents.count %> )
+<tr>
+    <th>Title</th>
+    <th>Author</th>
+    </tr>
+    <% @documents.each do |doc| %>
+        <tr>
+            <td> <%= link_to doc.title, doc %></td>
+            <td> <%= doc.author %></td>
+            <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Are you sure you want to delete this document???"} %></td>
+            </tr>
+        <% end %>
+    </table>
