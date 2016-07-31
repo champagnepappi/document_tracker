@@ -1,0 +1,23 @@
+<% provide(:title, "New Doc")%>
+<div class="medium-6 columns medium-offset-3">
+    <h1>New Document</h1>
+    <div class="callout">
+        <%= form_for(@document) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <%=f.label :author  %>
+            <%= f.text_field :author %><br>
+
+            <%= f.label :title %>
+            <%= f.text_field :title %><br>
+
+            <%= f.label :department %>
+            <%= f.text_field :department %><br>
+
+            <%= f.label :content %>
+            <%= f.text_area :content%><br>
+
+            <%= f.submit "Submit" %>
+
+        <% end %>
+    </div>
+</div>

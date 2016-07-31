@@ -1,0 +1,10 @@
+<% provide(:title, @document.title)%>
+<table>
+    <tr><td><th>Title :</th></td><td> <%= @document.title %></td> </tr>
+    <tr><td><th>Author :</th></td><td> <%= @document.author %></td> </tr>
+    <tr><td><th>Department :</th></td><td> <%= @document.department %></td> </tr><br>
+ </table>
+ <p><strong>Content</strong></p>
+ <%= @document.content %>
+  
+
