@@ -28,6 +28,16 @@ class DocumentsController < ApplicationController
     @document = Document.find_by(id: params[:id])
   end
 
+  def update
+    @document = Document.find_by(id: params[:id])
+    if @document.update_attributes(document_params)
+      flash[:success] = "Document successfully updated"
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     Document.find(params[:id]).destroy
     redirect_to request.referrer
