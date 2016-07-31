@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build(document_params)
     if @document.save
       flash[:success] = "Document successfully created"
-      redirect_to @document
+      redirect_to current_user
     else
       render 'new'
       flash.now[:alert] = "There was a problem creating the document,
@@ -17,6 +17,11 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+  end
+
+  def destroy
+    Document.find(params[:id]).destroy
+    redirect_to request.referrer
   end
 
   private
