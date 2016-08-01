@@ -1,9 +1,10 @@
 <% provide(:title, "Documents")%>
 <table>
-<h1> All Documents</h1>( <%= @documents.count %> )
+<h1> All Documents ( <%= @documents.count %> )</h1>
 <tr>
     <th>Title</th>
     <th>Author</th>
+    <th></th>
     </tr>
     <% @documents.each do |doc| %>
         <tr>

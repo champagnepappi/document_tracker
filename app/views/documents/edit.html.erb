@@ -1,6 +1,6 @@
-<% provide(:title, "New Doc")%>
+<% provide(:title, "Edit Document")%>
 <div class="medium-6 columns medium-offset-3">
-    <h1>New Document</h1>
+    <h1>Edit Document</h1>
         <%= form_for(@document) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
             <%=f.label :author  %>
@@ -15,7 +15,7 @@
             <%= f.label :content %>
             <%= f.text_area :content%><br>
 
-            <%= f.submit "Submit" %>
+            <%= f.submit "Update Document" %>
 
         <% end %>
 </div>
