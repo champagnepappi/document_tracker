@@ -1,7 +1,13 @@
 class DocumentsController < ApplicationController
 
   def index
+    if params[:department]
+      @documents = Document.where("department = ?", params[:department])
+    elsif params[:search]
+      @documents = Document.search(params[:search])
+    else
     @documents = Document.all
+    end
   end
 
   def new
@@ -45,7 +51,7 @@ class DocumentsController < ApplicationController
 
   private
   def document_params
-    params.require(:document).permit(:author, :title, :department,
+    params.require(:document).permit(:author, :title, :department,:link,
                                    :content  )
   end
 end
