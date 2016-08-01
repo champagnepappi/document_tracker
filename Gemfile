@@ -7,6 +7,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
+# gem 'acts-as-taggable-on'
 
 gem "recaptcha", require: "recaptcha/rails"
 

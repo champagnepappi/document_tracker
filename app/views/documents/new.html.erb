@@ -9,6 +9,9 @@
             <%= f.label :title %>
             <%= f.text_field :title %><br>
 
+            <%= f.label :link %>
+            <%= f.text_field :link %><br>
+
             <%= f.label :department %>
             <%= f.select  :department ,Document::DEPARTMENT, prompt: "Select department"%><br>
 

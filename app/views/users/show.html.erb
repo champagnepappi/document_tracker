@@ -13,11 +13,13 @@
             <tr>
                 <th>Title</th>
                 <th>Author</th>
+                <th>Link</th>
             </tr>
             <% @documents.each do |doc| %>
                 <tr>
                     <td> <%= link_to doc.title, doc %></td>
                     <td> <%= doc.author %></td>
+                    <td> <%= link_to doc.link, doc.link %></td>
                     <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Sure you wanna delete this document"} %></td>
                     <td> <%= link_to "Edit document",edit_document_path(doc)  %>
                 </tr>
