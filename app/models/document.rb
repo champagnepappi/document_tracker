@@ -1,5 +1,6 @@
 class Document < ApplicationRecord
   belongs_to :user
+  default_scope -> { order(created_at: :desc) }
   validates :author, presence: true
   validates :title , presence: true
   validates :link, presence: true
@@ -12,3 +13,4 @@ class Document < ApplicationRecord
       where("title LIKE ? OR author LIKE ? OR department LIKE ?","%#{search}%","%#{search}%","%#{search}%")
   end
 end
+
