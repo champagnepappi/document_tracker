@@ -9,6 +9,6 @@ class Document < ApplicationRecord
   DEPARTMENT = ["Success", "Life","Sports","Finance","Inspiration","Business"]
 
   def self.search(search)
-      where("title LIKE ?","%#{search}")
+      where("title LIKE ? OR author LIKE ? OR department LIKE ?","%#{search}%","%#{search}%","%#{search}%")
   end
 end

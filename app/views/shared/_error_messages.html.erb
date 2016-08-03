@@ -1,6 +1,7 @@
+<div class="errors">
 <% if object.errors.any? %>
     <div id="error_message">
-        <div>
+        <div class="callout alert">
             Your input contains <%= pluralize(object.errors.count, "error") %>
     </div>
     <ul>
@@ -10,3 +11,4 @@
     </ul>
     </div>
 <% end %>
+</div>

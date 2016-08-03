@@ -3,7 +3,7 @@
     <div class="row">
         <div class="medium-6 columns medium-offset-0">
             <h1> All Documents ( <%= @documents.count %> )</h1>
-            <div class="medium-6 columns">
+            <div class="top-bar-right">
                 <%= form_tag documents_path, method: 'get' do %>
                     <%= text_field_tag :search, params[:search] %>
                     <%= submit_tag "Search", name: nil %>
