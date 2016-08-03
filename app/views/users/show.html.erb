@@ -20,8 +20,10 @@
                     <td> <%= link_to doc.title, doc %></td>
                     <td> <%= doc.author %></td>
                     <td> <%= link_to doc.link, doc.link %></td>
+                    <% if current_user?(doc.user)%>
                     <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Sure you wanna delete this document"} %></td>
                     <td> <%= link_to "Edit document",edit_document_path(doc)  %>
+                    <% end %>
                 </tr>
             <% end %>
         </table>
