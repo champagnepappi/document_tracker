@@ -21,4 +21,9 @@ class DocumentTest < ActiveSupport::TestCase
     @document.content = ""
     assert_not @document.valid?
   end
+
+  test "document content should be at least 20 characters" do
+    @document.content = "c" * 19
+    assert_not @document.valid?
+  end
 end

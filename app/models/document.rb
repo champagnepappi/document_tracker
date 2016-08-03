@@ -7,7 +7,7 @@ class Document < ApplicationRecord
   validates :link, presence: true
   validates_format_of :link, with: URI.regexp
   validates :department, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, length: {minimum: 20}
   DEPARTMENT = ["Success", "Life","Sports","Finance","Inspiration","Business"]
 
   def self.search(search)
