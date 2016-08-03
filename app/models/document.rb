@@ -3,6 +3,7 @@ class Document < ApplicationRecord
   validates :author, presence: true
   validates :title , presence: true
   validates :link, presence: true
+  validates_format_of :link, with: URI.regexp
   validates :department, presence: true
   validates :content, presence: true
   DEPARTMENT = ["Success", "Life","Sports","Finance","Inspiration","Business"]
