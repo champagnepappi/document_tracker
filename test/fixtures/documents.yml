@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  author: MyString
-  title: MyString
-  link: MyString
-  department: MyString
-  content: MyText
-  user: one
+  author: "Einstein"
+  title: "the grapes of wrath" 
+  link: "http://www.dafafda.com"
+  department: "Sports"
+  content: "Lorem aybufgqiug8udgqbuifguiq"
+  user: santos
 
 two:
-  author: MyString
-  title: MyString
-  link: MyString
-  department: MyString
-  content: MyText
-  user: two
+  author: "ywbiuqiuqiuq"
+  title: "ufhiouqhdoiqhoid"
+  link: "http://www.ijfwjof.com"
+  department: "Success"
+  content: "Lorem qjibdijqioq"
+  user: shaz

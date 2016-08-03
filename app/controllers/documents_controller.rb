@@ -14,6 +14,7 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
+    j
   end
 
   def create
