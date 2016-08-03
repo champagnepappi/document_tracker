@@ -4,7 +4,11 @@
         <p>Name:   <%= @user.name %></p><br>
         <p>Email:  <%= @user.email %></p><br>
 
+
+        <% if current_user?(@user)%>
+        <p> <%= link_to "Edit Profile",edit_user_path(current_user) %></p>
         <p> <%= link_to "Add new document",new_document_path %></p>
+        <% end %>
     </div>
     <div class="medium-8 columns">
         <table>
