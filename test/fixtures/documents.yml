@@ -7,6 +7,7 @@ one:
   department: "Sports"
   content: "Lorem aybufgqiug8udgqbuifguiq"
   user: santos
+  created_at: <%= 2.minutes.ago%>
 
 two:
   author: "ywbiuqiuqiuq"
@@ -15,3 +16,11 @@ two:
   department: "Success"
   content: "Lorem qjibdijqioq"
   user: shaz
+  created_at: <%= 2.hours.ago%>
+
+most_recent:
+    author: "dave austine"
+    title: "the throne"
+    link: "http://www.jakakaao.com"
+    department: "Inspiration"
+    created_at: <%= Time.zone.now%>

@@ -26,4 +26,8 @@ class DocumentTest < ActiveSupport::TestCase
     @document.content = "c" * 19
     assert_not @document.valid?
   end
+
+  test "document should ordered with most recent first" do
+    assert_equal Document.first, documents(:most_recent)
+  end
 end
