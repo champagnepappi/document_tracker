@@ -5,6 +5,7 @@ class Document < ApplicationRecord
   validates :author, presence: true
   validates :title , presence: true
   validates :link, presence: true
+  validates :tag, presence: true, length: {minimum: 5}
   validates_format_of :link, with: URI.regexp
   validates :department, presence: true
   validates :content, presence: true, length: {minimum: 20}
