@@ -29,6 +29,7 @@
         <th>Title</th>
         <th>Author</th>
         <th>Department</th>
+        <th>Tag</th>
         <th></th>
     </tr>
 
@@ -37,6 +38,7 @@
             <td> <%= link_to doc.title, doc %></td>
             <td> <%= doc.author %></td>
             <td> <%= doc.department %></td>
+            <td> <%= doc.tag %></td>
             <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Are you sure you want to delete this document???"} %></td>
         </tr>
     <% end %>
