@@ -14,7 +14,6 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
-    j
   end
 
   def create
@@ -54,7 +53,7 @@ class DocumentsController < ApplicationController
 
   private
   def document_params
-    params.require(:document).permit(:author, :title, :department,:link,
+    params.require(:document).permit(:author, :title, :department,:link,:tag,
                                    :content  )
   end
 

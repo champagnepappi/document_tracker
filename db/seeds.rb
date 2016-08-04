@@ -26,11 +26,13 @@ users = User.order(:created_at).take(10)
   departments = ["Success", "Life","Sports","Finance","Inspiration","Business"]
   department = departments[rand(6)]
   link = Faker::Internet.url
+  tag = Faker::Book.genre
   content = Faker::Lorem.paragraph
   users.each { |user| user.documents.create!(title: title,
                                              author: author,
                                              department: department,
                                              link: link,
+                                             tag: tag,
                                              content: content)
   }
 end

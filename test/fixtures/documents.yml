@@ -5,6 +5,7 @@ one:
   title: "the grapes of wrath" 
   link: "http://www.dafafda.com"
   department: "Sports"
+  tag: "exercise"
   content: "Lorem aybufgqiug8udgqbuifguiq"
   user: santos
   created_at: <%= 2.minutes.ago%>
@@ -15,6 +16,7 @@ two:
   link: "http://www.ijfwjof.com"
   department: "Success"
   content: "Lorem qjibdijqioq"
+  tag: "sjkjsijs"
   user: shaz
   created_at: <%= 2.hours.ago%>
 
@@ -22,5 +24,6 @@ most_recent:
     author: "dave austine"
     title: "the throne"
     link: "http://www.jakakaao.com"
+    tag: "uhsoij"
     department: "Inspiration"
     created_at: <%= Time.zone.now%>

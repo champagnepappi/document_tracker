@@ -18,4 +18,16 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return nil for user with nil digest" do
     assert_not @user.authenticated?(:remember, '')
   end
+
+  # test "associated documents should be destroyed" do
+  #   @user.save
+  #   @user.documents.create!(author: "sharon",
+  #                          title: "this is acting",
+  #                          link: "http://www.jfsjs.com",
+  #                          department: "Business",
+  #                          content: "fhiaqiijsfgigawigigigfijgigwi")
+  #   assert_difference 'Document.count', -1 do
+  #     @user.destroy
+  #   end
+  # end
 end

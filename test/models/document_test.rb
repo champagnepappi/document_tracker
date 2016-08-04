@@ -6,6 +6,7 @@ class DocumentTest < ActiveSupport::TestCase
     @document = @user.documents.build(author: "shaniz",
                                       title: "anti hay",
                                       link: "http://www.wfsdas.com",
+                                      tag: "ijqfiqpq",
                                       department: "Success",
                                       content: "hbvfwsijhfiqjoahiuqhiudqiu")
   end
@@ -19,6 +20,7 @@ class DocumentTest < ActiveSupport::TestCase
     @document.author = " "
     @document.department = ""
     @document.content = ""
+    @document.tag = ""
     assert_not @document.valid?
   end
 
