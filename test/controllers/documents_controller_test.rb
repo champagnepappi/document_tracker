@@ -27,4 +27,13 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'Document.count' do
+      delete document_path(@document), params: {
+         id: @document
+      }
+    end
+    assert_redirected_to root_url
+  end
+
 end
