@@ -22,4 +22,22 @@ class DocumentsAdditionTest < ActionDispatch::IntegrationTest
     end
     assert_template 'new'
   end
+
+  test "add document with valid params" do
+    log_in_as(@user)
+    get new_document_path
+    assert_difference 'Document.count', 1 do
+      post documents_path params: {
+        document: {
+          title: "its my time",
+          author: "that nigga",
+          department: "Sports",
+          link: "http://www.nana.com",
+          tag: "hwuiuq9uiqui",
+          content: "jkbsbkjsiwgiusguiagbjhasvbhsvhjs"
+        }
+      }
+    end
+    assert_redirected_to @user
+  end
 end
