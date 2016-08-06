@@ -48,7 +48,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     Document.find(params[:id]).destroy
-    redirect_to request.referrer
+    redirect_to request.referrer || current_user
   end
 
   private
