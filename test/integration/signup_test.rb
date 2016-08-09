@@ -24,7 +24,7 @@ class SignupTest < ActionDispatch::IntegrationTest
       post users_path params: {
         user: {
           name: "vicky",
-          email: "vicky@gmail.com",
+          email: "vicdadaky@gmail.com",
           password: "einstein",
           passwword_confirmation: "einstein"
         }
