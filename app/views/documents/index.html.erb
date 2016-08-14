@@ -6,7 +6,7 @@
         </div>
         <div class="medium-6 columns">
             <%= form_tag documents_path, method: 'get' do %>
-                <%= text_field_tag :search, params[:search],placeholder: "search by title,author or department" %>
+                <%= text_field_tag :search, params[:search],placeholder: "search by title,author,tag or department" %>
                 <%= submit_tag "Search", name: nil, class: "button" %>
             <% end %>
         </div>
