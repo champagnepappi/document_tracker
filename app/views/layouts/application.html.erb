@@ -14,13 +14,13 @@
     <body>
         <%= render 'layouts/header' %>
         <div>
-        <% flash.each do |msg_type, message| %>
-            <div class="alert alert- <%= msg_type %>"><%= message %> </div>
-        <% end %>
+            <% flash.each do |msg_type, message| %>
+                <div class="alert alert- <%= msg_type %>"><%= message %> </div>
+            <% end %>
         </div>
         <div>
-        <%= yield %>
+            <%= yield %>
         </div>
-
+        <%= render 'layouts/footer' %>
     </body>
 </html>
