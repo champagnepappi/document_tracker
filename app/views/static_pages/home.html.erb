@@ -1,7 +1,9 @@
 <% provide(:title, "Home")%>
-<h1>Document Tracker</h1>
-<p> This is a system the helps you add a document</p>
-<p>in the repository </p>
-<% unless logged_in? %>
- <%= link_to "Sign Up", new_user_path  %>
- <% end %>
+<div id="layout">
+    <h1>Document Tracker</h1>
+    <p> This is a system that helps you add a document</p>
+    <p>in the repository </p>
+    <% unless logged_in? %>
+        <%= link_to "Sign Up", new_user_path, class: "button"  %>
+    <% end %>
+</div>
