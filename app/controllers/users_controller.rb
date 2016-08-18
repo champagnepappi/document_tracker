@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user ,except: [:new]
+  before_action :logged_in_user, except: [:new, :create]
+
   before_action :correct_user , only: [:edit, :update]
 
   def index
