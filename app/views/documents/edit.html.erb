@@ -4,22 +4,22 @@
         <%= form_for(@document) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
             <%=f.label :author  %>
-            <%= f.text_field :author %><br>
+            <%= f.text_field :author %>
 
             <%= f.label :title %>
-            <%= f.text_field :title %><br>
+            <%= f.text_field :title %>
 
             <%= f.label :link %>
-            <%= f.text_field :link %><br>
+            <%= f.text_field :link %>
 
             <%= f.label :tag %>
-            <%= f.text_field :tag %><br>
+            <%= f.text_field :tag %>
 
             <%= f.label :department %>
-            <%= f.select  :department ,Document::DEPARTMENT, prompt: "Select department"%><br>
+            <%= f.select  :department ,Document::DEPARTMENT, prompt: "Select department"%>
 
             <%= f.label :content %>
-            <%= f.text_area :content, rows: "20"%><br>
+            <%= f.text_area :content, rows: "10"%>
 
             <%= f.submit "Update Document" %>
 
