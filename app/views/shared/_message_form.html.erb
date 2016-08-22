@@ -1,0 +1,14 @@
+ <%= form_for(@message) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: "name" %>
+
+            <%= f.label :email %>
+            <%= f.email_field :email, placeholder: "example@email.com" %>
+
+            <%= f.label :message %>
+            <%= f.text_area :message, placeholder: "leave your message here..." %>
+
+            <%= f.submit "Submit", class: "button" %>
+        <% end %>
+
