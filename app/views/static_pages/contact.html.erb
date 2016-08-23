@@ -1,9 +1,12 @@
 <% provide(:title, "Contact")%>
-<div class=medium-12>
-    <div class="medium-5 columns">
+<div id="contact">
+    <div class=medium-12>
         <h1>contact us</h1>
-        <p>By email: kevinochieng548@gmail.com</p>
+        <div class="medium-5 columns">
+            <p>By email: kevinochieng548@gmail.com</p>
+        </div>
+        <div class="medium-7 columns">
+            <%= render 'shared/message_form' %>
+        </div>
     </div>
-    <div class="medium-7 columns">
-        <%= render 'shared/message_form' %>
-           </div>
+</div>
