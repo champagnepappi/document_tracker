@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816064105) do
+ActiveRecord::Schema.define(version: 20160822185157) do
 
   create_table "documents", force: :cascade do |t|
     t.string   "author"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20160816064105) do
     t.datetime "updated_at", null: false
     t.string   "tag"
     t.index ["user_id"], name: "index_documents_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "search_suggestions", force: :cascade do |t|
