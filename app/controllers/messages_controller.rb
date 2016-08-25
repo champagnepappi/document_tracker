@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
       redirect_to contact_path
       flash[:success] = "Message successfully submitted"
     else
-      render 'static_pages/contact'
+      flash[:danger] = "There was a problem saving your message, please try again"
+      render 'static_pages/contact' 
     end
   end
 
