@@ -1,12 +1,21 @@
 <% provide(:title, "Contact")%>
 <div id="contact">
     <div class=medium-12>
-        <h1>contact us</h1>
         <div class="medium-5 columns">
-            <p>By email: kevinochieng548@gmail.com</p>
+        <h1>contact us</h1>
+        <p>If you have any questions or comments feel free to contact us</p>
+        <p>Your feedback will be of help towards improving the application</p>
+        <p>Feel free to <%= mail_to "kevinochieng548@gmail.com", "mail us" %> </p><br>
+        <p>Leave your message here</p>
+            <%= render 'shared/message_form' %>
         </div>
         <div class="medium-7 columns">
-            <%= render 'shared/message_form' %>
+            <p>By social media:</p>
+            <p> <%= link_to "http://www.facebook.com/kevyne_santos" do %>
+            <%= image_tag 'fb.ico', height: "100", width: "100" %>
+            <% end %>
+            </p>
+
         </div>
     </div>
 </div>
