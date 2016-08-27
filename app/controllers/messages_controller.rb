@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     else
       flash[:danger] = "There was a problem saving your message, please try again"
       render 'static_pages/contact' 
+
     end
   end
 

@@ -18,6 +18,23 @@ class UserMessageTest < ActionDispatch::IntegrationTest
       }
     end
     assert_redirected_to contact_path
+    assert_not flash.empty?
+  end
+
+  test "message submission with invalid information" do
+    log_in_as(@user)
+    get contact_path
+    assert_no_difference 'Message.count' do
+      post messages_path params: {
+        message: {
+          name: "",
+          email: "ch@hooli.com",
+          message: ""
+        }
+      }
+    end
+    assert_template 'static_pages/contact'
+    assert_not flash.empty?
   end
 
 end
