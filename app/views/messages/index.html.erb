@@ -1,0 +1,16 @@
+<% provide(:title, "Messages")%>
+<table>
+    <h1>Messages ( <%= @messages.count %> )</h1>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+    </tr>
+    <% @messages.each do |msg| %>
+    <tr>
+        <td> <%= msg.name %></td>
+        <td> <%= msg.email %></td>
+        <td> <%= msg.message %></td>
+    </tr>
+    <% end %>
+</table>
