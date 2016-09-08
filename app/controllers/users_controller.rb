@@ -64,4 +64,10 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
+  def already_logged_in
+    if current_user
+      redirect_to root_url
+      flash[:message] = "You are already logged in"
+    end
+  end
 end
