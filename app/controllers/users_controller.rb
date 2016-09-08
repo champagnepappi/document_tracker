@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :already_logged_in , only: :new
   before_action :logged_in_user, except: [:new, :create]
 
   before_action :correct_user , only: [:edit, :update]
@@ -67,7 +68,7 @@ class UsersController < ApplicationController
   def already_logged_in
     if current_user
       redirect_to root_url
-      flash[:message] = "You are already logged in"
+      flash[:message] = "You are signed up"
     end
   end
 end
