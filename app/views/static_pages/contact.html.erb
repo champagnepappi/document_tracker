@@ -1,20 +1,30 @@
 <% provide(:title, "Contact")%>
 <div id="contact">
-    <div class=medium-12>
-        <div class="medium-5 columns">
-        <h1>contact us</h1>
-        <p>If you have any questions or comments feel free to contact us</p>
-        <p>Your feedback will be of help towards improving the application</p>
-        <p>Feel free to <%= mail_to "kevinochieng548@gmail.com", "mail us" %> </p><br>
-        <p>Leave your message here</p>
+    <div class="row">
+        <div class="medium-6 columns">
+            <h1>contact us</h1>
+            <p>If you have any questions or comments feel free to contact us</p>
+            <p>Your feedback will be of help towards improving the application</p>
+            <p>Feel free to <%= mail_to "kevinochieng548@gmail.com", "mail us" %> </p><br>
+            <p>Leave your message here</p>
             <%= render 'shared/message_form' %>
         </div>
-        <div class="medium-7 columns">
-            <p>By social media:</p>
-            <p> <%= link_to "http://www.facebook.com/kevyne_santos" do %>
-            <%= image_tag 'fb.ico', height: "100", width: "100" %>
-            <% end %>
-            </p>
+        <div class="medium-6 columns">
+            <h2>connect with us via social media:</h2>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <ul class="social">
+                        <li> <%= link_to fa_icon('twitter', text: "Twitter"), 'https://www.twitter.com/kevyne_santos'%></li>
+                        <li> <%= link_to fa_icon('facebook', text: "Facebook"), 'https://www.facebook.com/kevyne_santos'%></li>
+                    </ul>
+                
+                </div>
+                <div class="medium-6 columns">
+                    <ul class="social">
+                        <li> <%= link_to fa_icon('instagram', text: "Instagram"), 'https://www.instagram.com/kevyne_santos' %></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
     </div>
