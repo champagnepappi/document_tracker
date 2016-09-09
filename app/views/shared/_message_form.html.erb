@@ -1,13 +1,23 @@
- <%= form_for(@message) do |f| %>
+<%= form_for(@message) do |f| %>
+    <div class="row">
+        <div class="medium-6 columns">
             <%= f.label :name %>
             <%= f.text_field :name, placeholder: "name" %>
+        </div>
 
+        <div class="medium-6 columns">
             <%= f.label :email %>
             <%= f.email_field :email, placeholder: "example@email.com" %>
+        </div>
+    </div>
 
-            <%= f.label :message %>
-            <%= f.text_area :message, placeholder: "leave your message here..." %>
+    <div class="row">
+        <div class="medium-12 columns">
+        <%= f.label :message %>
+        <%= f.text_area :message, placeholder: "leave your message here...", rows: 6 %>
 
-            <%= f.submit "Submit", class: "button" %>
-        <% end %>
+        <%= f.submit "Submit", class: "button" %>
+        </div>
+    </div>
+<% end %>
 
