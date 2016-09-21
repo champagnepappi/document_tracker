@@ -15,7 +15,10 @@
                 <div class="medium-6 columns">
                     <ul class="social">
                         <li> <%= link_to fa_icon('twitter', text: "Twitter"), 'https://www.twitter.com/kevyne_santos'%></li>
-                        <li> <%= link_to fa_icon('facebook', text: "Facebook"), 'https://www.facebook.com/kevyne_santos'%></li>
+                        <li> <%= link_to 'https://www.facebook.com/kevyne_santos' do %>
+                            <%= image_tag 'fb.ico', height: '50',width: "50" %>
+                            <% end %>
+                        </li>
                     </ul>
                 
                 </div>

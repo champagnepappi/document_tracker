@@ -54,4 +54,12 @@ class LoginTest < ActionDispatch::IntegrationTest
     log_in_as(@user, remember_me: '0')
     assert_nil cookies['remember_token']
   end
+
+  test "current user should not login" do
+   log_in_as(@user) 
+   get login_path
+   assert_redirected_to root_url
+   assert_not flash.empty?
+   assert_equal flash[:alert], "You are already logged in"
+  end
 end

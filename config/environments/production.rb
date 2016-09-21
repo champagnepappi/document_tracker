@@ -31,6 +31,15 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   host = "doc-tracker.herokuapp.com"
     config.action_mailer.default_url_options = { host: host }
+    config.action_mailer.smtp_settings = {
+       address: "smtp.gmail.com",
+       port: 587;
+       domain: "herokuapp.com",
+         authentication: "plain",
+         enable_starttls_auto: true,
+         user_name: ENV["GMAIL_USERNAME"],
+         password: ENV["GMAIL_PASSWORD"]
+    }
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
