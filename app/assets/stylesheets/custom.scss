@@ -1,3 +1,10 @@
+#msg {
+    color: white;
+
+}
+#msg.success {
+    background-color: #0D2621;
+}
 .errors {
     color: red;
 }
@@ -24,4 +31,3 @@ footer {
     min-height: 100%;
     clear: both;
 }
-
