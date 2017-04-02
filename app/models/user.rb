@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
+  name_regex = /\A[a-z]+\Z/i
   validates :name, presence: true, length: {maximum: 40}, numericality: false
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true,length: {maximum: 100},
@@ -14,6 +15,7 @@ class User < ApplicationRecord
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
