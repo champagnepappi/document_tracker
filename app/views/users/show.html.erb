@@ -1,45 +1,45 @@
 <% provide(:title, @user.name )%>
 <div class="row">
-<div class=medium-12>
-    <div id="grav">
-    <div class="medium-4 columns">
+    <div class=medium-12>
+        <div id="grav">
+            <div class="medium-4 columns">
                 <p> <%= gravatar_for @user %><p>
-        <p>Name:   <%= @user.name %></p><br>
-        <p>Email:  <%= @user.email %></p><br>
+                <p>Name:   <%= @user.name %></p><br>
+                <p>Email:  <%= @user.email %></p><br>
 
 
-        <% if current_user?(@user)%>
-            <div id="link">
-        <p> <%= link_to "Edit Profile",edit_user_path(current_user),style: "color: white" %></p>
-        <p> <%= link_to "Add new document",new_document_path, style: "color: white" %></p>
-        <p> <%= link_to "View messages", messages_path, style: "color: white" %></p>
+                <% if current_user?(@user)%>
+                    <div id="link">
+                        <p> <%= link_to "Edit Profile",edit_user_path(current_user),style: "color: white" %></p>
+                        <p> <%= link_to "Add new document",new_document_path, style: "color: white" %></p>
+                        <p> <%= link_to "View messages", messages_path, style: "color: white" %></p>
+                    </div>
+                <% end %>
+            </div>
         </div>
-        <% end %>
-        </div>
-    </div>
-    <div class="medium-8 columns">
-        <table>
-            <h4>My documents</h4>
-            <p> <%= pluralize(@documents.count, "document") %></p>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Link</th>
-                <th>Tag</th>
-            </tr>
-            <% @documents.each do |doc| %>
+        <div class="medium-8 columns">
+            <table>
+                <h4>My documents</h4>
+                <p> <%= pluralize(@documents.count, "document") %></p>
                 <tr>
-                    <td> <%= link_to doc.title, doc %></td>
-                    <td> <%= doc.author %></td>
-                    <td> <%= link_to doc.link, doc.link %></td>
-                    <td> <%= doc.tag %></td>
-                    <% if current_user?(doc.user)%>
-                    <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Sure you wanna delete this document"} %></td>
-                    <td> <%= link_to "Edit document",edit_document_path(doc)  %>
-                    <% end %>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Link</th>
+                    <th>Tag</th>
                 </tr>
-            <% end %>
-        </table>
+                <% @documents.each do |doc| %>
+                    <tr>
+                        <td> <%= link_to doc.title, doc %></td>
+                        <td> <%= doc.author %></td>
+                        <td> <%= link_to doc.link, doc.link %></td>
+                        <td> <%= doc.tag %></td>
+                        <% if current_user?(doc.user)%>
+                            <td> <%= link_to "delete", doc, method: :delete, data: {confirm: "Sure you wanna delete this document"} %></td>
+                            <td> <%= link_to "Edit document",edit_document_path(doc)  %>
+                        <% end %>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
     </div>
-</div>
 </div>
