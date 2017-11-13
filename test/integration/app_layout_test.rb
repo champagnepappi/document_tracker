@@ -1,4 +1,5 @@
 require 'test_helper'
+k
 
 class AppLayoutTest < ActionDispatch::IntegrationTest
   def setup
